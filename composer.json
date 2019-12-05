@@ -1,0 +1,54 @@
+{
+    "name": "guetteman/laravel-tinker-server",
+    "description": "A Laravel package to use Tinker in the server",
+    "keywords": [
+        "guetteman",
+        "laravel-tinker-server"
+    ],
+    "homepage": "https://github.com/guetteman/laravel-tinker-server",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Luis Guette",
+            "email": "guetteluis@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "5.8.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Guetteman\\LaravelTinkerServer\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Guetteman\\LaravelTinkerServer\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Guetteman\\LaravelTinkerServer\\LaravelTinkerServerServiceProvider"
+            ],
+            "aliases": {
+                "LaravelTinkerServer": "Guetteman\\LaravelTinkerServer\\LaravelTinkerServerFacade"
+            }
+        }
+    }
+}
